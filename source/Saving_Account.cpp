@@ -9,9 +9,14 @@ bool Saving_Account::deposit(double amount) {
     amount =  amount + (amount * int_rate / 100);
     return Account::deposit(amount);
 }
-std::ostream &operator <<(std::ostream &os, const Saving_Account &account) {
-    os << "[Saving Account: " << account.name << ": " << account.balance << ": " << account.int_rate << "%]";
-    return os;
+bool Saving_Account::withdraw(double amount) {
+    //amount =  amount + (amount * int_rate / 100);
+    return Account::deposit(amount);
+}
+
+
+void Saving_Account::print(std::ostream &os) const {
+    os << "[Saving_Account : " <<  name << ": " << balance << ": " << int_rate << "%]";
 }
 
 

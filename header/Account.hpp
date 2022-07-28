@@ -1,9 +1,9 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <I_Printable.hpp>
 
-class Account {
-    friend std::ostream &operator <<(std::ostream &os, const Account &account);
+class Account : public I_Printable {
 private:
     static constexpr const char *default_name = "Unnamed Account";
     static constexpr const double default_balance = 0.0;
@@ -12,8 +12,8 @@ protected:
     double balance;
 public:
     Account(std::string name = default_name,double balance = default_balance);
-    bool deposit(double amount);
-    bool withdraw(double amount);
-    double get_balance() const ;    
-    ~Account();
+    virtual bool deposit(double amount) = 0;
+    virtual bool withdraw(double amount) = 0;
+    virtual void print(std::ostream &os) const override;
+    virtual ~Account() = default;
 };

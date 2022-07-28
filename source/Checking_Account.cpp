@@ -9,9 +9,12 @@ bool Checking_Account::withdraw(double amount) {
     amount += default_fee;
     return Account::withdraw(amount);
 }
+bool Checking_Account::deposit(double amount) { 
+    //amount += default_fee;
+    return Account::deposit(amount);
+}
 
-std::ostream &operator << (std::ostream &os, const Checking_Account &account) {
-    os << "[Checking Account: " <<  account.name << ": " << account.balance ;
-    return os;
+void Checking_Account::print(std::ostream &os) const {
+    os << "[Checking Account : " <<  name << ": " << balance << "]";
 }
 
