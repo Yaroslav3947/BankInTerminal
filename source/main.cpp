@@ -47,7 +47,7 @@ int main() {
     std::unique_ptr<Account> yariks_account;
     std::unique_ptr<Account> natasha_account;
     try {
-        yariks_account = std::make_unique<Saving_Account>("Larry", -2000.0); // Illegal Balance exeption
+        yariks_account = std::make_unique<Saving_Account>("Yarik", -2000.0); // Illegal Balance exeption
         std::cout << *yariks_account << std::endl;
     }
     catch (const IllegalBalanceExeption &ex)
@@ -56,7 +56,7 @@ int main() {
     }
 
     try {
-        natasha_account = std::make_unique<Saving_Account>("Moe", 1000.0);
+        natasha_account = std::make_unique<Saving_Account>("Natasha", 1000.0);
         std::cout << *natasha_account << std::endl;
         natasha_account->withdraw(500.0);
         std::cout << *natasha_account << std::endl;
