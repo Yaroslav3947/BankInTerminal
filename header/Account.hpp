@@ -2,6 +2,8 @@
 #include <string>
 #include <iostream>
 #include <I_Printable.hpp>
+#include <IllegalBalanceExeption.hpp>
+#include <InsufficientFundsException.hpp>
 
 class Account : public I_Printable {
 private:
